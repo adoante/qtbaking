@@ -58,7 +58,7 @@ export default function RecipesPage() {
         params.set("limit", String(limit))
         params.set("offset", String(offset))
 
-        return `http://localhost:8080/recipes?${params.toString()}`
+        return `https://pepo.qtbaking.com/recipes?${params.toString()}`
     }, [searchTitle, tags, match, limit, offset])
 
     useEffect(() => {
@@ -84,7 +84,7 @@ export default function RecipesPage() {
             try {
                 setLoading(true);
 
-                const res = await fetch('http://localhost:8080/tags')
+                const res = await fetch('https://pepo.qtbaking.com/tags')
                 if (!res.ok) {
                     throw new Error("Failed to fetch tags")
                 }

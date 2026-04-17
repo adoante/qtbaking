@@ -25,7 +25,7 @@ export default function RecipePage({
             try {
                 setLoading(true);
 
-                const res = await fetch(`http://localhost:8080/recipes/${slug}`);
+                const res = await fetch(`https://pepo.qtbaking.com/recipes/${slug}`);
                 if (!res.ok) {
                     throw new Error("Failed to fetch recipe");
                 }

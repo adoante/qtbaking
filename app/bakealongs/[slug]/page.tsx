@@ -24,7 +24,7 @@ export default function BakealongPage({
             try {
                 setLoading(true);
 
-                const res = await fetch(`http://localhost:8080/bakealongs/${slug}`);
+                const res = await fetch(`https://pepo.qtbaking.com/bakealongs/${slug}`);
                 if (!res.ok) {
                     throw new Error("Failed to fetch bakealong");
                 }

@@ -63,7 +63,7 @@ export default function RecipesPage() {
         params.set("limit", String(limit))
         params.set("offset", String(offset))
 
-        return `http://localhost:8080/bakealongs?${params.toString()}`
+        return `https://pepo.qtbaking.com/bakealongs?${params.toString()}`
     }, [searchTitle, match, limit, offset, sort, order, tags])
 
     useEffect(() => {
@@ -89,7 +89,7 @@ export default function RecipesPage() {
             try {
                 setLoading(true);
 
-                const res = await fetch('http://localhost:8080/tags')
+                const res = await fetch('https://pepo.qtbaking.com/tags')
                 if (!res.ok) {
                     throw new Error("Failed to fetch tags")
                 }
