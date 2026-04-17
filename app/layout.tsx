@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import DesktopNav from "@/components/DesktopNav";
+import DesktopFooter from "@/components/DesktopFooter"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -24,8 +25,11 @@ export default function RootLayout({
             className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
         >
             <body>
-                <DesktopNav />
-                <ThemeProvider>{children}</ThemeProvider>
+                <ThemeProvider>
+                    <DesktopNav />
+                    {children}
+                    <DesktopFooter />
+                </ThemeProvider>
             </body>
         </html>
     )

@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ThemeToggle } from './themeToggle';
 
 const mainNavItems = [
     ['Home', '/'],
@@ -10,7 +11,7 @@ const mainNavItems = [
 
 export default function DesktopNav() {
     return (
-        <nav className="bg-muted">
+        <nav className="bg-muted border-b">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
                 <Link href='/'>
                     <Image
@@ -23,14 +24,14 @@ export default function DesktopNav() {
 
                 <div className="flex items-center gap-6">
                     {mainNavItems.map(([name, link]) => (
-                        <Button
-                            key={name}
-                            variant="link"
-                            className="text-foreground cursor-pointer"
-                        >
-                            <Link href={link}>{name}</Link>
-                        </Button>
+                        <Link key={name} href={link}>
+                            <Button variant="link" className="text-foreground cursor-pointer">
+                                {name}
+                            </Button>
+                        </Link>
                     ))}
+
+                    <ThemeToggle />
                 </div>
             </div>
         </nav>
