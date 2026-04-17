@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ThemeToggle } from './themeToggle';
 
 const mainNavItems = [
-    ['Home', '/'],
     ['Bakealongs', '/bakealongs'],
     ['Recipes', '/recipes']
 ];
@@ -13,7 +12,7 @@ export default function DesktopNav() {
     return (
         <nav className="bg-muted border-b">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-                <Link href='/'>
+                <Link href='/' className='shrink-0'>
                     <Image
                         src="/pepoHappyChef.webp"
                         alt="website logo"

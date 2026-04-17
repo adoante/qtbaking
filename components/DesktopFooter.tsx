@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { ThemeToggle } from './themeToggle';
 
 const mainNavItems = [
-    ['Home', '/'],
     ['Bakealongs', '/bakealongs'],
     ['Recipes', '/recipes']
 ];
@@ -20,8 +19,8 @@ export default function Footer() {
                         <Image
                             src="/pepoHappyChef.webp"
                             alt="website logo"
-                            width={28}
-                            height={28}
+                            width={32}
+                            height={32}
                         />
                     </Link>
                 </div>
