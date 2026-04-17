@@ -28,6 +28,7 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { CaretUpDownIcon } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function RecipesPage() {
     const [recipes, setRecipes] = useState<FullRecipe[] | null>(null);
@@ -208,23 +209,25 @@ export default function RecipesPage() {
                 <div>
                     <div className="grid gap-4 md:grid-cols-2">
                         {safeRecipes.map((recipe) => (
-                            <div key={recipe.id} className="rounded-xl border p-4 bg-sidebar-accent">
-                                <h2 className="text-xl font-semibold">
-                                    {recipe.title.replaceAll("_", " ").replaceAll("duplicate", "").trim()}
-                                </h2>
+                            <Link key={recipe.id} href={`/recipes/${recipe.id}`}>
+                                <div key={recipe.id} className="rounded-xl border p-4 bg-sidebar-accent h-full">
+                                    <h2 className="text-xl font-semibold">
+                                        {recipe.title.replaceAll("_", " ").replaceAll("duplicate", "").trim()}
+                                    </h2>
 
-                                <div className="flex flex-wrap gap-2 mt-4">
-                                    {(recipe.tags ?? []).map((tag) => (
-                                        <Badge
-                                            key={tag.id}
-                                            onClick={() => setTags((prev) => [...prev, tag.tag])}
-                                            className="cursor-pointer"
-                                        >
-                                            {tag.tag}
-                                        </Badge>
-                                    ))}
+                                    <div className="flex flex-wrap gap-2 mt-4">
+                                        {(recipe.tags ?? []).map((tag) => (
+                                            <Badge
+                                                key={tag.id}
+                                                onClick={() => setTags((prev) => [...prev, tag.tag])}
+                                                className="cursor-pointer"
+                                            >
+                                                {tag.tag}
+                                            </Badge>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
 
@@ -256,7 +259,8 @@ export default function RecipesPage() {
                         </PaginationContent>
                     </Pagination>
                 </div>
-            )}
-        </main>
+            )
+            }
+        </main >
     );
 }

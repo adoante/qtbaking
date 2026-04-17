@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import { CaretUpDownIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function RecipesPage() {
     const [bakealongs, setBakealongs] = useState<Bakealong[] | null>(null);
@@ -249,45 +250,54 @@ export default function RecipesPage() {
                 <div>
                     <div className="grid gap-4 md:grid-cols-2">
                         {safeBakealongs.map((bakealong) => (
-                            <div key={bakealong.id} className="rounded-xl border p-4 bg-sidebar-accent">
-                                <h2 className="text-xl font-semibold">
-                                    {bakealong.vod_title}
-                                </h2>
+                            <Link
+                                key={bakealong.id}
+                                href={`/bakealongs/${bakealong.slug}`}
+                                className="block"
+                            >
+                                <div className="rounded-xl border p-4 bg-sidebar-accent hover:shadow-md transition cursor-pointer">
+                                    <h2 className="text-xl font-semibold">
+                                        {bakealong.vod_title}
+                                    </h2>
 
-                                <p className="text-sm text-muted-foreground mt-1">
-                                    {new Date(bakealong.created_at).toLocaleDateString()}
-                                </p>
+                                    <p className="text-sm text-muted-foreground mt-1">
+                                        {new Date(bakealong.created_at).toLocaleDateString()}
+                                    </p>
 
-                                <Image
-                                    src={`https://img.youtube.com/vi/${bakealong.slug}/mqdefault.jpg`}
-                                    alt={bakealong.vod_title}
-                                    width={320}
-                                    height={180}
-                                    className="w-full rounded-lg mt-5"
-                                />
+                                    <Image
+                                        src={`https://img.youtube.com/vi/${bakealong.slug}/mqdefault.jpg`}
+                                        alt={bakealong.vod_title}
+                                        width={320}
+                                        height={180}
+                                        className="w-full rounded-lg mt-5"
+                                    />
 
-                                <div className="mt-4">
-                                    <h3 className="font-medium">Recipes</h3>
-                                    <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                                        {bakealong.recipes.map((recipe) => (
-                                            <li
-                                                key={recipe.id}>{recipe.title}
-                                                <div className="flex flex-wrap gap-2 mt-1">
-                                                    {(recipe.tags ?? []).map((tag) => (
-                                                        <Badge
-                                                            key={tag.id}
-                                                            onClick={() => setTags((prev) => [...prev, tag.tag])}
-                                                            className="cursor-pointer"
-                                                        >
-                                                            {tag.tag}
-                                                        </Badge>
-                                                    ))}
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <div className="mt-4">
+                                        <h3 className="font-medium">Recipes</h3>
+                                        <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                                            {bakealong.recipes.map((recipe) => (
+                                                <li key={recipe.id}>
+                                                    {recipe.title}
+                                                    <div className="flex flex-wrap gap-2 mt-1">
+                                                        {(recipe.tags ?? []).map((tag) => (
+                                                            <Badge
+                                                                key={tag.id}
+                                                                onClick={(e) => {
+                                                                    e.preventDefault(); // 🚨 IMPORTANT
+                                                                    setTags((prev) => [...prev, tag.tag]);
+                                                                }}
+                                                                className="cursor-pointer"
+                                                            >
+                                                                {tag.tag}
+                                                            </Badge>
+                                                        ))}
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
 
@@ -319,7 +329,8 @@ export default function RecipesPage() {
                         </PaginationContent>
                     </Pagination>
                 </div>
-            )}
-        </main>
+            )
+            }
+        </main >
     );
 }
