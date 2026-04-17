@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import Image from 'next/image'
+import Link from "next/link";
 
 export default function Page() {
     return (
@@ -30,11 +31,17 @@ export default function Page() {
                         Bake along with QT! <br /> Every recipe and VOD in one convenient place.
                     </p>
                     <div className="flex items-center gap-4">
-                        <Button className="px-6 py-3 cursor-pointer">
-                            Find a Bakealong
+                        <Button
+                            className="px-6 py-3 cursor-pointer"
+                        >
+                            <Link href="/bakealongs">
+                                Find a Bakealong
+                            </Link>
                         </Button>
                         <Button variant="outline" className="px-6 py-3 cursor-pointer">
-                            Browse Recipes
+                            <Link href="/recipes">
+                                Browse Recipes
+                            </Link>
                         </Button>
                     </div>
                 </div>
@@ -111,11 +118,17 @@ export default function Page() {
                     </p>
 
                     <div className="mt-6 flex items-center justify-center gap-4">
-                        <Button className="px-6 py-3 cursor-pointer">
-                            Find a Bakealong
+                        <Button
+                            className="px-6 py-3 cursor-pointer"
+                        >
+                            <Link href="/bakealongs">
+                                Find a Bakealong
+                            </Link>
                         </Button>
                         <Button variant="outline" className="px-6 py-3 cursor-pointer">
-                            Browse Recipes
+                            <Link href="/recipes">
+                                Browse Recipes
+                            </Link>
                         </Button>
                     </div>
                 </div>
