@@ -85,7 +85,7 @@ export default function RecipePage({
                                         <ToggleGroupItem
                                             value={tool.name}
                                             key={tool.id}
-                                            className="h-auto p-3 justify-start text-left"
+                                            className="h-auto p-3 justify-start text-left cursor-pointer"
                                         >
                                             <span>{tool.name}</span>
                                             {tool.optional && (
@@ -114,7 +114,7 @@ export default function RecipePage({
                                         <ToggleGroupItem
                                             value={String(ingredient.id)}
                                             key={ingredient.id}
-                                            className="h-auto p-3 justify-start text-left"
+                                            className="h-auto p-3 justify-start text-left cursor-pointer"
                                         >
                                             <div>
                                                 <div className="font-medium">

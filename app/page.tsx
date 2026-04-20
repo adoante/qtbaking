@@ -32,13 +32,17 @@ export default function Page() {
                     </p>
                     <div className="flex items-center gap-4">
                         <Button
+                            asChild
                             className="px-6 py-3 cursor-pointer"
                         >
                             <Link href="/bakealongs">
                                 Find a Bakealong
                             </Link>
                         </Button>
-                        <Button variant="outline" className="px-6 py-3 cursor-pointer">
+                        <Button
+                            variant="outline" className="px-6 py-3 cursor-pointer"
+                            asChild
+                        >
                             <Link href="/recipes">
                                 Browse Recipes
                             </Link>
