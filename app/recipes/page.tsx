@@ -104,7 +104,7 @@ export default function RecipesPage() {
     }, [fetchURL]);
 
     return (
-        <main className="max-w-7xl mx-auto p-6">
+        <main className="max-w-7xl mx-auto p-6 min-h-screen">
             <h1 className="text-3xl md:text-4xl font-bold mb-6">Recipes</h1>
 
             <Collapsible className="mb-5">

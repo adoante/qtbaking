@@ -5,7 +5,8 @@ import { ThemeToggle } from './themeToggle';
 
 const mainNavItems = [
     ['Bakealongs', '/bakealongs'],
-    ['Recipes', '/recipes']
+    ['Recipes', '/recipes'],
+    ['Privacy Policy', '/privacy-policy']
 ];
 
 export default function Footer() {

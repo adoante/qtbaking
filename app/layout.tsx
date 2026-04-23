@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import DesktopNav from "@/components/DesktopNav";
 import DesktopFooter from "@/components/DesktopFooter"
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
     title: "QT Bakealong Archive",
@@ -54,6 +55,7 @@ export default function RootLayout({
                 <ThemeProvider>
                     <DesktopNav />
                     {children}
+                    <Analytics />
                     <DesktopFooter />
                 </ThemeProvider>
             </body>
