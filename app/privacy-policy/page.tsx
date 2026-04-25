@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-3xl px-6 py-12">
             <h1 className="text-3xl font-semibold tracking-tight">Privacy Policy</h1>
             <p className="mt-2 text-sm text-muted-foreground">
-                Last updated: April 22, 2026
+                Last updated: April 25, 2026
             </p>
 
             <div className="mt-8 space-y-8 text-sm leading-6">
@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
                     <div className="space-y-2">
                         <h3 className="font-medium">Analytics Data</h3>
                         <p className="text-muted-foreground">
-                            We use Vercel Web Analytics to collect anonymous usage data such as page views, device type, and referrers. This data does not identify individual users.
+                            We use Vercel Web Analytics and Vercel Speed Insights to collect anonymous usage data such as page views, device type, and referrers. This data does not identify individual users.
                             For more details, see Vercel’s official privacy documentation: {" "}
                             <a
                                 href="https://vercel.com/docs/analytics/privacy-policy"

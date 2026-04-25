@@ -108,6 +108,16 @@ export default function Page() {
                         I’ll keep this updated with every new bakealong so it stays useful
                         for everyone.
                     </p>
+
+                    <p className="mt-4 text-muted-foreground">
+                        This project is open source. View the code on Github here:{" "}
+                        <a href="https://github.com/adoante/qtbaking" className="underline">
+                            Website Code
+                        </a> | {" "}
+                        <a href="https://github.com/adoante/qtbaking-api" className="underline">
+                            API Code
+                        </a>.
+                    </p>
                 </div>
             </section>
 
